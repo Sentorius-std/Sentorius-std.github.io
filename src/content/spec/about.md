@@ -1,5 +1,7 @@
 # About
 
+[Version française](/about-fr/)
+
 I'm **Sent@rius**, an Offensive Security Consultant specializing in Active Directory attack paths, web application security, and adversary emulation. This site is both a portfolio and a working record: structured penetration test reports, bug bounty findings, and the open-source tooling I build to support that work.
 
 I hold the **CPTS**, **CRTO**, and **CRTA** certifications, and actively hunt on **YesWeHack** under the handle [Sentorius](https://yeswehack.com/hunters/sentorius#latest-hacktivity). Full credential details are on the [Certifications](/certifications/) page.
