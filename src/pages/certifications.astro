@@ -1,0 +1,21 @@
+---
+import Certifications from "@components/Certifications.astro";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+
+const title = "Certifications";
+const description = "Professional certifications";
+---
+
+<MainGridLayout title={title} description={description}>
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<h1 class="text-2xl font-bold text-90">Certifications</h1>
+			<p class="text-75 mt-4 mb-10">
+				Every certification below represents months of hands-on labs, late nights, and deliberate practice against real-world attack scenarios.
+				I don't collect credentials for the sake of it: each one reflects a skill I pushed myself to master until it held up under exam pressure.
+				This page tracks that effort, one certification at a time.
+			</p>
+			<Certifications />
+		</div>
+	</div>
+</MainGridLayout>

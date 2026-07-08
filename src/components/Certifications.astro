@@ -1,0 +1,98 @@
+---
+import { Icon } from "astro-icon/components";
+import ImageWrapper from "@components/misc/ImageWrapper.astro";
+
+interface Cert {
+	code: string;
+	fullName: string;
+	issuer: string;
+	icon: string;
+	bg: string;
+	accent: string;
+	shimmer: string;
+	verifyUrl: string;
+	image?: string;
+}
+
+const certs: Cert[] = [
+	{
+		code: "CPTS",
+		fullName: "Certified Penetration Testing Specialist",
+		issuer: "Hack The Box",
+		icon: "fa6-solid:shield-halved",
+		bg: "bg-violet-950",
+		accent: "text-violet-300",
+		shimmer: "rgba(196, 132, 252, 0.14)",
+		verifyUrl: "https://www.credly.com/badges/1669383f-9d89-454c-94a4-920cf3c03ee0",
+		image: "assets/images/certs/cpts.jpg",
+	},
+	{
+		code: "CRTO",
+		fullName: "Certified Red Team Operator",
+		issuer: "Zero-Point Security",
+		icon: "fa6-solid:user-shield",
+		bg: "bg-blue-950",
+		accent: "text-blue-300",
+		shimmer: "rgba(96, 165, 250, 0.14)",
+		verifyUrl: "https://certs.zeropointsecurity.co.uk/b9124c0c-b880-4b57-94a0-0e7d6eea98da#acc.zcUtQofl",
+		image: "assets/images/certs/crto.jpg",
+	},
+	{
+		code: "CRTA",
+		fullName: "Certified Red Team Analyst",
+		issuer: "CyberWarFare Labs",
+		icon: "fa6-solid:user-secret",
+		bg: "bg-red-950",
+		accent: "text-red-300",
+		shimmer: "rgba(248, 113, 113, 0.14)",
+		verifyUrl: "https://www.credential.net/76faf5cf-41df-4252-a175-901659e7248b#acc.dnz10LeZ",
+		image: "assets/images/certs/crta.jpg",
+	},
+];
+---
+
+<div class="flex flex-col gap-10">
+	{certs.map((cert) => (
+		<div class={`card-base overflow-hidden ${cert.bg}`}>
+			<div class="relative overflow-hidden p-6">
+				<div class="card-shimmer absolute inset-0 pointer-events-none" style={`--shimmer-color: ${cert.shimmer}`}></div>
+				<div class="relative">
+					<h2 class="text-2xl font-bold text-white">
+						{cert.fullName} <span class={`font-semibold ${cert.accent}`}>({cert.code})</span>
+					</h2>
+					<div class="text-sm text-white/60 mt-2">By {cert.issuer}</div>
+					<a
+						href={cert.verifyUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-white/90 hover:text-white transition"
+					>
+						View credential
+						<Icon name="fa6-solid:arrow-up-right-from-square" class="text-xs" />
+					</a>
+				</div>
+			</div>
+			<div aria-hidden="true">
+				{cert.image ? (
+					<ImageWrapper src={cert.image} alt={`${cert.fullName} certificate`} class="w-full" />
+				) : (
+					<div class="w-full aspect-video flex items-center justify-center bg-white/5">
+						<Icon name={cert.icon} class={`text-6xl ${cert.accent}`} />
+					</div>
+				)}
+			</div>
+		</div>
+	))}
+</div>
+
+<style>
+	.card-shimmer {
+		background: linear-gradient(120deg, transparent 30%, var(--shimmer-color, rgba(255, 255, 255, 0.06)) 50%, transparent 70%);
+		background-size: 200% 100%;
+		animation: shimmer 6s ease-in-out infinite;
+	}
+	@keyframes shimmer {
+		0% { background-position: 200% 0; }
+		100% { background-position: -200% 0; }
+	}
+</style>

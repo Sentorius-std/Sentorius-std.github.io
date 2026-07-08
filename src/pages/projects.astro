@@ -1,0 +1,19 @@
+---
+import Projects from "@components/Projects.astro";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+
+const title = "Projects";
+const description = "Open-source security tooling";
+---
+
+<MainGridLayout title={title} description={description}>
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<h1 class="text-2xl font-bold text-90">Projects</h1>
+			<p class="text-75 mt-4 mb-10">
+				A selection of open-source tools built to speed up recurring steps in offensive security work, credential validation, injection discovery, and network recon.
+			</p>
+			<Projects />
+		</div>
+	</div>
+</MainGridLayout>

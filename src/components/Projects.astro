@@ -1,0 +1,70 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Project {
+	name: string;
+	tagline: string;
+	description: string;
+	icon: string;
+	accent: string;
+	bg: string;
+	url: string;
+}
+
+const projects: Project[] = [
+	{
+		name: "LogonShoot",
+		tagline: "Multi-protocol credential testing CLI",
+		description:
+			"A command-line tool for validating credentials across FTP, SSH, RDP, SMB, WinRM, and MSSQL in a single run. Accepts single targets, host lists, or targets parsed directly from Nmap output, and supports password, NTLM pass-the-hash, and SSH key authentication through a modular, extensible architecture.",
+		icon: "fa6-solid:key",
+		accent: "text-violet-300",
+		bg: "bg-violet-950",
+		url: "https://github.com/Sentorius-std/LogonShoot",
+	},
+	{
+		name: "NoSql-Automation",
+		tagline: "NoSQL injection discovery and auth-bypass scanner",
+		description:
+			"Automates the discovery of login endpoints and tests them for NoSQL injection, covering JSON-operator payloads, form-based operator injection, and blind detection through redirect, status-code, and response-length analysis, with full HTTP traffic logging for later review.",
+		icon: "fa6-solid:database",
+		accent: "text-blue-300",
+		bg: "bg-blue-950",
+		url: "https://github.com/Sentorius-std/NoSql-Automation",
+	},
+	{
+		name: "Ping-script",
+		tagline: "Lightweight network host enumeration",
+		description:
+			"A shell script for quickly sweeping a target network range and enumerating live hosts, built as a fast first-pass reconnaissance step ahead of more detailed scanning.",
+		icon: "fa6-solid:network-wired",
+		accent: "text-teal-300",
+		bg: "bg-teal-950",
+		url: "https://github.com/Sentorius-std/Ping-script",
+	},
+];
+---
+
+<div class="flex flex-col gap-5">
+	{projects.map((project) => (
+		<a
+			href={project.url}
+			target="_blank"
+			rel="noopener noreferrer"
+			class={`card-base group flex flex-col sm:flex-row overflow-hidden ${project.bg} transition hover:brightness-110`}
+		>
+			<div class="w-full sm:w-20 shrink-0 flex items-center justify-center py-4 sm:py-0">
+				<Icon name={project.icon} class={`text-4xl ${project.accent}`} />
+			</div>
+			<div class="p-5 sm:pl-0 flex-1">
+				<span class="text-white text-lg font-bold">{project.name}</span>
+				<div class="text-sm text-white/90 mt-1">{project.tagline}</div>
+				<p class="text-sm text-white/60 mt-2 leading-relaxed">{project.description}</p>
+				<div class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-white/90 group-hover:text-white transition">
+					View on GitHub
+					<Icon name="fa6-solid:arrow-up-right-from-square" class="text-xs" />
+				</div>
+			</div>
+		</a>
+	))}
+</div>

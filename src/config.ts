@@ -8,16 +8,16 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "No1V4",
-	subtitle: "A Place to Share My Thoughts",
+	title: "Yulus Ceasar",
+	subtitle: "Offensive Security Consultant",
 	lang: "en", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
-		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		hue: 300, // Default hue for the theme color, from 0 to 360. e.g. red: 0, violet: 300, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
 	},
 	banner: {
 		enable: true,
-		src: "assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		src: "assets/images/banner.svg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: true, // Display the credit text of the banner image
@@ -45,34 +45,42 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		LinkPreset.About,
 		{
+			name: "Certifications",
+			url: "/certifications/", // Internal links should not include the base path, as it is automatically added
+		},
+		{
+			name: "Projects",
+			url: "/projects/",
+		},
+		{
 			name: "GitHub",
-			url: "https://github.com/Zakaria-Farahi", // Internal links should not include the base path, as it is automatically added
+			url: "https://github.com/Sentorius-std",
 			external: true, // Show an external link icon and will open in a new tab
 		},
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Zakaria Farahi",
-	bio: "Welcome To My Blog.",
+	avatar: "assets/images/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	name: "Yulus Ceasar",
+	bio: "Offensive Security Consultant",
 	links: [
 		{
 			name: "Linkedin",
 			icon: "fa6-brands:linkedin", // Visit https://icones.js.org/ for icon codes
 			// You will need to install the corresponding icon set if it's not already included
 			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://www.linkedin.com/in/zakaria-farahi/",
+			url: "https://www.linkedin.com/in/", // TODO: replace with Yulus's LinkedIn URL
 		},
 		{
-			name: "HackTheBox",
-			icon: "local:hackthebox",
-			url: "https://app.hackthebox.com/profile/1665618",
+			name: "YesWeHack",
+			icon: "fa6-solid:bug",
+			url: "https://yeswehack.com/hunters/sentorius#latest-hacktivity",
 		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/Zakaria-Farahi",
+			url: "https://github.com/Sentorius-std",
 		},
 	],
 };
