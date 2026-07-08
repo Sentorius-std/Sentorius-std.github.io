@@ -4,7 +4,7 @@ I'm **Sent@rius**, an Offensive Security Consultant specializing in Active Direc
 
 I hold the **CPTS**, **CRTO**, and **CRTA** certifications, and actively hunt on **YesWeHack** under the handle [Sentorius](https://yeswehack.com/hunters/sentorius#latest-hacktivity). Full credential details are on the [Certifications](/certifications/) page.
 
-## What I Do
+## Core Expertise
 
 - **Penetration testing**: conducting engagements across web applications and Active Directory environments, identifying critical privilege escalation paths, and delivering concrete, actionable hardening recommendations to clients.
 - **Bug bounty research**: independent vulnerability discovery and responsible disclosure through YesWeHack, covering access control, information disclosure, and infrastructure misconfigurations.
